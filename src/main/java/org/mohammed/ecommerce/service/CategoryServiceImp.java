@@ -21,7 +21,6 @@ public class CategoryServiceImp  implements CategoryService{
     public void addCategory(Category category)
     {
         categoryRepo.save(category);
-
     }
     public String deleteCategory(Integer categoryId)
     {

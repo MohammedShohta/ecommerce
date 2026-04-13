@@ -1,39 +1,30 @@
 package org.mohammed.ecommerce.model;
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
-import org.mohammed.ecommerce.repos.CategoryRepo;
-
-import java.beans.ConstructorProperties;
+import lombok.*;
 
 @Entity
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+@Table(name="categories",
+uniqueConstraints =@UniqueConstraint(name="categoryUniqueName",columnNames = "category_name"))
 public class Category {
-
-    @Setter
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @SequenceGenerator(name="sequence"
+    ,sequenceName = "category_sequence"
+    ,allocationSize = 1)
+    @GeneratedValue(strategy =GenerationType.SEQUENCE,generator = "sequence")
     private Integer categoryId;
+    @Column(name="category_name",
+    nullable=false)
     private String categoryName;
 
-    public Category()
-    {
 
-    }
+    @Embedded
+    private CategoryInfo categoryInfo;
 
-    public Category(Integer categoryId, String categoryName) {
-        this.categoryId = categoryId;
-        this.categoryName = categoryName;
-    }
-    public Integer getCategoryId() {
-        return categoryId;
-    }
-    public String getCategoryName() {
-        return categoryName;
-    }
-    public void setCategoryName(String categoryName)
-    {
-        this.categoryName=categoryName;
-    }
+
 
 
 }

@@ -1,0 +1,13 @@
+MySql database
+GitHub
+
+-Create API------postman
+
+-create CRUD Api for category
+-apply jpa concept and annotation
+-apply sequence generation
+-apply Embedded@Embeddable concept
+
+will come
+1-Validation to avoid null value and internal server error
+2-TestRepo
