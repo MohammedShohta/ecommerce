@@ -26,6 +26,18 @@ public class CategoryController {
         return new ResponseEntity<>(category,HttpStatus.OK);
     }
 
+    @GetMapping("/api/public/categories/{id:\\d+}")
+    public ResponseEntity<String>getCategoryCreator(@PathVariable Integer id)
+    {
+        String category=categories.getCategoryCreator(id);
+        return new ResponseEntity<>(category,HttpStatus.OK);
+    }
+    @GetMapping("/api/public/categories/{name}")
+    public ResponseEntity<Category>getCategoryCreator(@PathVariable String name)
+    {
+        Category category=categories.showCategoryByCreatorName(name);
+        return new ResponseEntity<>(category,HttpStatus.OK);
+    }
     @PostMapping("/api/public/categories")
     public ResponseEntity<String> addCategory(@RequestBody Category category)
     {
@@ -59,4 +71,9 @@ public class CategoryController {
         }
     }
 
+    @PutMapping("/api/public/categories/{id}")
+    public ResponseEntity<String> updateCategory(@RequestBody Category category, @PathVariable Integer id) {
+        categories.updateCategoryNameByCategoryId(category.getCategoryName(), id);
+        return ResponseEntity.ok("Updated Successfully");
+    }
 }

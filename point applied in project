@@ -7,6 +7,8 @@ GitHub
 -apply jpa concept and annotation
 -apply sequence generation
 -apply Embedded@Embeddable concept
+-apply custom query to return the creator of category from DB by id and return category by the name of creator
+-use Transactional annotation to modify categoryName
 
 will come
 1-Validation to avoid null value and internal server error

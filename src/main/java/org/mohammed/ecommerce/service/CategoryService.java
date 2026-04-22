@@ -10,5 +10,8 @@ public interface CategoryService {
      void addCategory(Category category);
      String deleteCategory(Integer categoryId);
      Category updateCategory(Category category,Integer categoryId);
+     String getCategoryCreator(Integer id);
+     Category showCategoryByCreatorName(String creatorName);
+     void updateCategoryNameByCategoryId (String categoryName,Integer id);
 
 }

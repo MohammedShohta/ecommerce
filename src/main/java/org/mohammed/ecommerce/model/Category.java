@@ -1,7 +1,6 @@
 package org.mohammed.ecommerce.model;
 import jakarta.persistence.*;
 import lombok.*;
-
 @Entity
 @Data
 @AllArgsConstructor
@@ -19,12 +18,6 @@ public class Category {
     @Column(name="category_name",
     nullable=false)
     private String categoryName;
-
-
     @Embedded
     private CategoryInfo categoryInfo;
-
-
-
-
 }

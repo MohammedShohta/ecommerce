@@ -42,4 +42,19 @@ public class CategoryServiceImp  implements CategoryService{
                return savedCategory;
 
     }
+
+    public String getCategoryCreator(Integer id)
+    {
+        String creator=categoryRepo.showCategoryByCreator(id);
+        return creator;
+    }
+    public Category showCategoryByCreatorName(String creatorName)
+    {
+        Category category=categoryRepo.showCategoryByCreatorName(creatorName);
+        return category;
+    }
+
+    public void updateCategoryNameByCategoryId(String categoryName, Integer id) {
+        categoryRepo.updateCategoryNameByCategoryId(categoryName, id);
+    }
 }

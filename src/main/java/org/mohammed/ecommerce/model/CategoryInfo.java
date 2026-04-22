@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class CategoryInfo {
+public class CategoryInfo  {
 
     @Column(nullable = false)
     private String createdBy="Mohammed";
